@@ -1,0 +1,29 @@
+END
+K 22
+VisualSVN-SvnAuthz.ini
+V 14
+file _4.0.t0-0
+K 22
+VisualSVN-WinAuthz.ini
+V 14
+file _7.0.t0-0
+K 13
+VisualSVN.lck
+V 14
+file _9.0.t0-0
+K 5
+authz
+V 14
+file _b.0.t0-0
+K 14
+hooks-env.tmpl
+V 14
+file _d.0.t0-0
+K 6
+passwd
+V 14
+file _f.0.t0-0
+K 13
+svnserve.conf
+V 14
+file _h.0.t0-0

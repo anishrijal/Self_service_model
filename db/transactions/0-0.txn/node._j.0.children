@@ -1,0 +1,41 @@
+END
+K 7
+current
+V 14
+file _k.0.t0-0
+K 6
+format
+V 14
+file _n.0.t0-0
+K 7
+fs-type
+V 14
+file _p.0.t0-0
+K 9
+fsfs.conf
+V 14
+file _r.0.t0-0
+K 16
+min-unpacked-rev
+V 14
+file _t.0.t0-0
+K 12
+rep-cache.db
+V 14
+file _v.0.t0-0
+K 20
+rep-cache.db-journal
+V 14
+file _x.0.t0-0
+K 8
+revprops
+V 13
+dir _z.0.t0-0
+K 4
+revs
+V 14
+dir _15.0.t0-0
+K 12
+transactions
+V 14
+dir _1b.0.t0-0

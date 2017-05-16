@@ -1,0 +1,455 @@
+@charset "utf-8";
+@media only screen and (max-width: 1855px){
+    .details-age{
+        width: 42%;
+    }
+    .details-age,.race,.gender{
+        height: 200px;
+    }
+    .allDataStatistics div{
+        margin-top: 25px;
+    }
+}
+@media only screen and (max-width: 1700px){
+    .race{
+        width: 29%;
+    }
+}
+@media only screen and (max-width: 1680px){
+    .NewTitleLeft{
+        width: 68%;
+    }
+    .index-header h1{
+        top:95px;
+    }
+    .details-age{
+        width: 40%;
+    }
+    .margin-top{
+        margin-top: 20px;
+    }
+    .details-age,.race,.gender{
+        height: 180px;
+    }
+}
+@media only screen and (max-width: 1520px){
+    .details-age,.gender{
+        margin-right: 4%;
+    }
+    .allDataStatistics div{
+        margin-top: 20px;
+    }
+}
+@media only screen and (max-width: 1440px){
+    .index-header h1{
+        top:50px;
+    }
+    .recent-event{
+        height: 200px!important;
+    }
+    .recent-event ul li img, .all-event ul li img{
+        height: 100px;
+    }
+    .NewTitleLeft{
+        width: 66%;
+    }
+    .NewTitleContent{
+        width: 78%;
+    }
+    .selectAll ul li{
+        width: 14.6%;
+    }
+    .selectAll ul li:nth-child(6n+0){
+        margin-right: 0!important;
+        float: right
+    }
+    .selectAll ul li:nth-child(8n+0){
+        float: left;
+        margin-right: 2.4%!important;
+    }
+    .details-age,.gender{
+        margin-right: 3%;
+    }
+    .allDataStatistics div{
+        margin-top: 18px;
+    }
+    .details-age,.race,.gender{
+        height: 170px;
+    }
+}
+@media only screen and (max-width: 1350px){
+    .NewTitleContent{
+        width: 73%;
+    }
+    .NewTitleLeft{
+        width: 63%;
+    }
+    .allDataStatistics{
+        width: 250px;
+    }
+}
+@media only screen and (max-width: 1305px){
+    .details-age{
+        margin-left: 30px;
+    }
+}@media only screen and (max-width: 1260px){
+    .NewTitleLeft{
+        width: 61%;
+    }
+}
+@media only screen and (max-width: 1240px){
+    .NewTitleLeft{
+        width: 60%  ;
+    }
+}
+@media only screen and (max-width: 1220px){
+    .recent-event{
+        height: 190px !important;
+    }
+    .recent-event ul li img, .all-event ul li img{
+        height: 80px;
+    }
+    .recent-event-upload img{
+        margin:0;
+    }
+    .NewTitleLeft{
+        width: 58%;
+    }
+    .NewTitleContent{
+        width: 69%;
+    }
+    .details-age,.gender{
+        margin-right: 2%;
+    }
+    .dataExhibition{
+        height: 170px;
+    }
+}
+@media only screen and (max-width: 1200px){
+    .recent-event ul li{
+        width: 17%;
+    }
+}
+@media only screen and (max-width: 1150px){
+    .allDataStatistics{
+        width: 220px;
+    }
+    .all-event ul li:nth-child(5n+0){
+        margin-right: 0;
+        float: right;
+    }
+    .all-event ul li:nth-child(6n+0){
+        margin-right: 3%;
+        float: left;
+    }
+    .all-event ul li{
+        width: 17%;
+    }
+    .recent-event ul li:nth-child(5n+0){
+        float: right;
+        margin-right: 0;
+    }
+}@media only screen and (max-width: 1130px){
+    .NewTitleLeft{
+        width: 56%;
+    }
+}
+@media only screen and (max-width: 1125px){
+    .NewTitleLeft{
+        width: 56%;
+    }
+    .NewTitleContentRight{
+        width: 146px;
+    }
+    .NewTitleRight{
+        width: 405px;
+    }
+    .details-age,.gender{
+        margin-right: 1%;
+    }
+}
+@media only screen and (max-width: 1070px){
+    .NewTitleContent{
+        width: 68%;
+    }
+    .NewTitleLeft{
+        width: 55%;
+    }
+}
+@media only screen and (max-width: 1055px){
+    .NewTitleLeft{
+        width: 55%;
+    }
+    .NewTitleContent{
+        width: 63%;
+    }
+    .NewTitleRight{
+        width: 400px;
+    }
+    .NewTitleContentRight{
+        width: 150px;
+    }
+    .details-age,.gender{
+        margin-right: 0;
+    }
+}
+@media only screen and (max-width: 1030px){
+    .details-age{
+        margin-left: 10px;
+    }
+    .NewTitleLeft{
+        width:54% ;
+    }
+}
+@media only screen and (max-width: 1000px){
+    .NewTitleLeft{
+        width: 53%;
+    }
+    .NewTitleContentRight{
+        width: 146px;
+    }
+    .NewTitleRight{
+        width: 395px;
+    }
+    .recent-event ul{
+        width: 83%;
+    }
+    .selectAll ul li{
+        width: 23%;
+    }
+    .insidePageHeaderRight p{
+        margin-right: 100px;
+    }
+    .recent-event ul li{
+        width: 22%;
+    }
+    .selectAll ul li:nth-child(6n+0){
+        float: left;
+        margin-right: 2.4%;
+    }
+    .selectAll ul li:nth-child(4n+0){
+        float: right;
+        margin-right:0;
+    }
+}
+@media only screen and (max-width: 975px){
+    .NewTitleLeft{
+        width: 50%;
+    }
+    .NewTitleContent{
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 970px){
+    .NewTitleContentRight{
+        width: 140px;
+    }
+    .NewTitleLeft img{
+        height: 95%;
+    }
+}
+@media only screen and (max-width: 960px){
+    .gender{
+        width: 160px;
+    }
+}
+@media only screen and (max-width: 935px){
+    .NewTitleContentRight{
+        width: 135px;
+    }
+    .NewTitleLeft img{
+        height: 90%;
+    }
+}
+@media only screen and (max-width: 930px){
+    .insidePageHeaderRight p{
+        margin-right: 50px;
+    }
+
+    .recent-event-upload img{
+       width: 100px;
+        height:100px;
+    }
+    .NewTitleRight{
+        width: 360px;
+        padding:29px 20px;
+    }
+    .NewTitleLeft{
+        padding: 29px 20px;
+    }
+    .NewTitleLeft img{
+      height: 80%;
+        margin-top: 20px;
+    }
+    .NewTitleContentRight{
+        width: 130px;
+    }
+}
+@media only screen and (max-width: 915px){
+    .gender{
+        width: 155px;
+    }
+}
+@media only screen and (max-width: 900px){
+    .gender{
+        width: 145px;
+    }
+}
+@media only screen and (max-width: 885px){
+    .NewTitleLeft{
+        width: 50%;
+        padding: 29px 15px;
+    }
+    .NewTitleContentRight{
+        width: 110px;
+    }
+    .NewTitleLeft img{
+        width: 100%;
+        height: auto;
+    }
+}
+@media only screen and (max-width: 880px){
+    .all-event ul li:nth-child(5n+0){
+        margin-right: 3%;
+        float: left;
+    }
+    .all-event ul li:nth-child(4n+0){
+        margin-right: 0;
+        float: right;
+    }
+    .all-event ul li{
+        width: 22%;
+    }
+}
+@media only screen and (max-width: 865px){
+    .gender{
+        width: 135px;
+    }
+    .recent-event ul li{
+        width: 30%;
+    }
+}
+@media only screen and (max-width: 840px){
+    .NewTitleContentRight{
+        width: 125px;
+    }
+    .NewTitleLeft img{
+        width: 100%;
+        height: auto;
+        margin: 20px 7px;
+    }
+    .NewTitleRight{
+        width: 330px;
+        padding: 29px 12px;
+    }
+    .NewTitleLeft{
+        padding: 29px 10px;
+    }
+    .header-right p{
+        margin-right: 100px!important;
+    }
+    .NewTitleContent{
+        width: 61%;
+    }
+    .allDataStatistics{
+        width: 195px;
+    }
+}
+@media only screen and (max-width: 820px){
+    .allDataStatistics{
+        width: 180px;
+    }
+}
+@media only screen and (max-width: 800px){
+    .NewTitleContentRight{
+        width: 120px;
+    }
+    .details-age{
+        margin-left: 5px;
+    }
+}
+@media only screen and (max-width: 780px){
+    .NewTitleLeft{
+        width: 47%;
+    }
+    .NewTitleContentRight{
+        width: 110px;
+    }
+    .details-age{
+        margin-left: -5px;
+    }
+}
+@media only screen and (max-width: 760px){
+    .NewTitleContent{
+        width: 60%;
+    }
+    .recent-event ul{
+        width: 79%;
+    }
+}
+@media only screen and (max-width: 750px){
+    .allDataStatistics{
+        width: 155px;
+    }
+}
+@media only screen and (max-width: 745px){
+    .NewTitleRight{
+        width: 315px;
+        padding: 29px 5px;
+    }
+    .NewTitleContentRight{
+        width: 105px;
+    }
+}
+@media only screen and (max-width: 715px){
+    .all-event ul li{
+        width: 31%;
+    }
+    .all-event ul li:nth-child(3n+0){
+        margin-right: 0;
+        float: right;
+    }
+    .all-event ul li:nth-child(4n+0){
+        margin-right: 3%;
+        float: left;
+    }
+}
+@media only screen and (max-width: 700px){
+    .header-right p{
+        margin-right: 50px!important;
+    }
+}
+
+@media only screen and (max-width: 685px){
+    .recent-event ul li{
+        width: 40%;
+    }
+    .recent-event ul li:nth-child(2N+0){
+        float: right;
+        margin-right: 0;
+    }
+    .recent-event ul{
+        width: 75%;
+    }
+}
+@media only screen and (max-width: 580px){
+    .recent-event ul{
+        width: 70%;
+    }
+    .all-event ul li:nth-child(3n+0){
+        float: left;
+        margin-right: 3%;
+    }
+    .all-event ul li:nth-child(2n+0){
+        float: right;
+        margin-right: 0;
+    }
+
+    .all-event ul li{
+        width: 40%;
+    }
+}
+
+
+
+

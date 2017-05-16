@@ -1,0 +1,43 @@
+@charset "utf-8";
+@font-face {
+    font-family: robotoThin; /*这里是说明调用来的字体名字*/
+    src: url('fonts/Roboto-Thin.ttf'); /*这里是字体文件路径*/
+}
+@font-face {
+    font-family: robotoMedium;
+    src: url('fonts/Roboto-Medium.ttf');
+}
+@font-face {
+    font-family: robotoBold;
+    src: url('fonts/Roboto-Bold.ttf');
+}
+@font-face {
+    font-family: robotoLight;
+    src: url('fonts/Roboto-Light.ttf');
+}
+
+
+/* css reset www.admin10000.com */
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,header,section,footer,article
+{ margin:0; padding:0; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box;}
+body {  color:#555; font-size:14px; font-family: "robotoThin"; }
+
+td,th,caption { font-size:62.5%; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+
+a,a:hover,a:active { text-decoration:none; color: #555;}
+
+
+img { border:none; }
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif; }
+table { border-collapse:collapse; }
+html {overflow-y: scroll;}
+header,section,footer,article,canvas{display:block;}
+
+/* css common */
+.clearfix:after, .clearfix:before {content: ""; display: block; height:0; clear:both; visibility: hidden;}
+.clearfix { *zoom:1; }
+.pull-left{float: left;}
+.pull-right{float: right;}
