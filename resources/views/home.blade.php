@@ -23,23 +23,23 @@
         </div>
         <div class="clearfix"></div>
     </section>
-    <section class="promptProgress">
-        <div class="Background-shadow"></div>
-        <div class="promptText">
+    <!-- <section class="promptProgress">
+        <div class="Background-shadow"></div> -->
+        <!-- <div class="promptText">
             <i class="material-icons character-Close">clear</i>
             <img class="loader" src="{{ asset('image/map.png') }}" alt="">
             <img class="promptSetting" src="{{ asset('image/setting.jpg') }}" alt="">
             <h2>Please wait while we're processing your data.</h2>
             <p>This may take a few minutes. Thank you for your patience.</p>
-        </div>
-    </section>
+        </div> -->
+    <!-- </section> -->
+    @include('auth.setting')
 @endsection
 @section('pageEnd')
     @parent
     <script type="text/javascript" src="{{ asset('js/goalProgress.js') }}"></script>
     <script>
         $(function(){
-
             // 页面数据
             $.ajax({
                 url: "list",
@@ -59,12 +59,13 @@
                             "</div>" +
                             "</div>" +
                             "<div class='recent-event-delete'>" +
-                            "<img class='imgClick' src='{{ asset('image/delete.png') }}' alt=''>" +
+                            "<img src='{{ asset('image/delete.png') }}' alt=''>" +
                             "<a> </a>"+
                             "</div>" +
                             "</li>";
                         $(".recent-event").find("ul").append(html);
                         $(".all-event").find("ul").append(html);
+
                         $(".sample"+val.id+"").goalProgress({
                             goalAmount: 100,
                             currentAmount: val.schedule,
@@ -75,35 +76,40 @@
                         if(val.schedule == 100){
                             $(".recent"+val.id+"").find('.aprogressBar').css({display:"none"});
                         } else {
-                            var set = setInterval(setData,3000);
+                            var set = setInterval(setData, 3000);
                             //回调数据
                             function setData() {
-                                var widths=$(".recent"+val.id+"").find('.progressBar').width()+10;
+                                $.ajax({
+                                    url: "list",
+                                    type:"get",
+                                    dataType:"json",
+                                    headers:{'X-CSRF-TOKEN':$('meta[name="_token"]').attr('content')},
+                                    success:function(data){
+                                        var widthf =$(".recent"+ val.id+"").find('.progressBar').width();
+                                        var widths=$(".recent"+val.id+"").find('.container').width();
+                                        if(widthf == widths){
+                                            $(".recent"+val.id+"").find('.aprogressBar').css({display:"none"});
+                                            clearInterval(set);
+                                        }
+                                        $(".sample"+val.id+"").html('');
+                                        $.each(data.round,function (e,v) {
+                                            $(".sample"+v.id+"").goalProgress({
+                                                goalAmount: 100,
+                                                currentAmount: v.schedule,
+                                                textBefore: '',
+                                                textAfter:' %'
+                                            });
+                                        });
+                                    },
+                                    error: function () {
+                                        console.log("Failed to load")
+                                    }
+                                });
+                                var widths=$(".recent"+val.id+"").find('.progressBar').width();
                                 var swidths=$(".recent"+val.id+"").find('.container').width();
-                                if(widths >= swidths){
+                                if(widths == swidths){
                                     $(".recent"+val.id+"").find('.aprogressBar').css({display:"none"});
                                     clearInterval(set);
-                                }else {
-                                    $.ajax({
-                                        url: "list",
-                                        type:"get",
-                                        dataType:"json",
-                                        headers:{'X-CSRF-TOKEN':$('meta[name="_token"]').attr('content')},
-                                        success:function(data){
-                                            $(".sample"+val.id+"").html('');
-                                            $.each(data.round,function (e,v) {
-                                                $(".sample"+v.id+"").goalProgress({
-                                                    goalAmount: 100,
-                                                    currentAmount: v.schedule,
-                                                    textBefore: '',
-                                                    textAfter:' %'
-                                                });
-                                            });
-                                        },
-                                        error: function () {
-                                            console.log("Failed to load")
-                                        }
-                                    });
                                 }
                             }
                         }

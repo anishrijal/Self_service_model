@@ -25,9 +25,9 @@
                 <a class="header-login" id="header-login">Login</a>
             </span>
         @else
-            <p>Welcome, {{ Auth::user()->name }} !</p>&nbsp;
-            <span><a class="header-register settingDate" >My Profile</a></span>&numsp;&numsp;
-            |&numsp;&numsp;
+            <p>Welcome, {{ Auth::user()->name }} !</p>
+            <span><a class="header-register settingDate" >My Profile</a></span><div>&numsp;&numsp;
+            |&numsp;&numsp;</div>
             <span><a class="header-login" href="{{ url('/logout') }}">Logout</a></span>
         @endif
     </div>

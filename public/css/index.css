@@ -1,6 +1,9 @@
 @charset "utf-8";
 body{
-
+  /*Could break other css*/
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
 }
 header{
@@ -26,15 +29,12 @@ header{
 .header-right a:hover{
     color: #fff;
 }
-.header-right p{
-    margin-right: 200px;
-}
+
+
 .header-left{
-    width: auto;
-    height: auto;
-    float: left;
+    flex: 0 1 auto;
 }
-.header-left a{display: inline-block;}
+/*.header-left a{display: inline-block;}*/
 .header-left img{
     width: auto;
     height: auto;
@@ -48,48 +48,52 @@ header{
     width: 100%;
     position: absolute;
     left: 0;
-    bottom: 40px;
+    bottom: 10%;
 }
 
-.header-right{
-    width: auto;
-    height: auto;
-    float: right;
-    margin-right: 80px;
-    margin-top: 25px;
-    color: #fff;
-}
 .header-right p{
+    min-width: 250px;
     display: inline-block;
     font-size: 14px;
     color: #fff;
+    flex: 1 1 auto;
+
 }
-.header-right span{
+.header-right {
+    display: flex;
+    flex: 1 1 auto;
+
+    justify-content: flex-end;
     font-size: 20px;
+    margin-top: 15px;
     color: #fff;
     font-weight: lighter;
+    margin-right: 10px;
+}
+#register-style, #setting-style{
+  overflow: scroll;
 }
 
 footer{
-    width: 100%;
-    height:50px;
+    /*width: 100%;*/
+    /*height:50px;*/
+    margin-top: 3px;
     background-color: #fff;
     color: #000;
     text-align: center;
     line-height: 50px;
     font-size: 16px;
-    position: fixed;
-    left:0;
-    bottom:0;
+    /*position: fixed;*/
+    /*left:0;*/
+    /*bottom:0;*/
     box-shadow: 0 -2px 6px #d7d7d7;
 }
 
-#login-style,#register-style,#setting-style,#forgetPassword{
-    width: 480px;
-    height: 380px;
+#login-style,#register-style,#setting-style{
     position: absolute;
-    left:0;
-    top:0;
+    width: 480px;
+    left:50%;
+    top:50%;
     z-index: 10;
     background-color: #fff;
     border-radius: 12px;
@@ -97,8 +101,96 @@ footer{
     -webkit-border-radius: 12px;
     display: none;
 }
+#login-style{
+  height: 440px;
+  margin-top: -220px;
+  margin-left: -240px;
+}
 #register-style,#setting-style{
-    height:640px !important;
+    height:640px;
+    margin-left: -240px;
+    margin-top: -320px;
+}
+@media only screen and (max-width: 480px) {
+  #login-style, #register-style,#setting-style{
+    width: 100% !important;
+    height: 100% !important;
+    left:0 !important;
+    top:0 !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    border-radius: 0px !important;
+
+  }
+  #login-style form{
+    margin: 50% 9% 0 9%;
+  }
+  .register-center, .register-first, .register-last{
+    width: 255px !important;
+    float: none !important;
+  }
+  .register-center div input {
+    width: 211px !important;
+  }
+  .login-foot{
+    width: 200px !important;
+  }
+  .register-last input{
+      margin-left: 25px !important;
+  }
+}
+@media only screen and (max-width: 780px) and (orientation: landscape){
+  .index-header{
+    min-height: 150px !important;
+  }
+  .index-header img{
+    min-height: 150px !important;
+
+  }
+  .index-header-middle-link{
+    bottom: 18%;
+  }
+  .index-center{
+    margin: 0 auto !important;
+  }
+  .index-center div p{
+    margin-top: 0px !important;
+  }
+  .index-center img {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .index-center div{
+    margin
+    flex: 1 1 50% !important;
+  }
+  #login-style, #register-style,#setting-style{
+    width: 100% !important;
+    height: 100% !important;
+    left:0 !important;
+    top:0 !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    border-radius: 0px !important;
+
+  }
+  #login-style form{
+    margin: -5% 9% 0 9% !important;
+  }
+
+  .login-foot{
+    width: 200px !important;
+  }
+  .register-center, .register-first, .register-last{
+    width: 255px !important;
+    float: none !important;
+  }
+  .register-center div input {
+    width: 211px !important;
+  }
+  .register-last input{
+      margin-left: 25px !important;
+  }
 }
 #Agreement-style{
     background-color: #fff;
@@ -113,7 +205,6 @@ footer{
     padding: 50px 65px;
     display: none;
 }
-
 #Agreement-style h1{
     font-family:robotoLight ;
     font-size: 18px;
@@ -149,7 +240,6 @@ footer{
     color: #afb1b3;
     font-family: robotoMedium;
     cursor: pointer;
-    margin-top: 7px;
 }
 
 .YesAgreement span{
@@ -171,17 +261,20 @@ footer{
 }
 
 .insidePageHeader{
+    flex: 0 0 auto;
     width: 100%;
     height: 80px;
+    display:flex;
     background-color: #000;
     position: static;
 }
 .insidePageHeaderLeft{
     width: auto;
+    flex: 0 0 auto;
     height: auto;
     padding: 20px 40px;
-    display: inline-block;
-    float: left;
+    /*display: inline-block;
+    float: left;*/
 }
 .insidePageHeaderLeft a{
     display: inline-block;
@@ -189,8 +282,11 @@ footer{
 .insidePageHeaderRight{
     width: auto;
     height: auto;
-    float: right;
-    margin: 32px 80px;
+    /*float: right;*/
+    display: flex;
+    align-self: center;
+    flex: 1 1 auto;
+    margin-right: 10px;
     color: #fff;
     font-family:robotoThin ;
 }
@@ -208,38 +304,22 @@ footer{
     color: #fff;
 }
 .insidePageHeaderRight p{
-    display: inline-block;
-    margin-right: 200px;
+    /*display: inline-block;*/
+    /*margin-right: 200px;*/
+    flex:1 1 auto;
 
 }
-
-
-#loginP{
-    width: 100%;
-    height: auto;
-    text-align: center;
-    font-family:robotoLight;
-    color: #f7261b;
-    font-size: 14px;
-    position: absolute;
-    left: 0;
-    top:195px;
-    display: none;
-}
-
-
 /*--------------首页面-----------------------------------*/
 .index-header{
     width: 100%;
-    height:auto;
-    display: block;
-   /* background: url("../image/People_edited_crop.jpg") no-repeat;
-    background-size: cover;*/
     position: relative;
+    min-height: 200px;
 }
 .index-header img{
     width: 100%;
     height: auto;
+    object-fit: cover;
+    min-height: 250px;
 }
 .index-header .index-header-middle{
     width: 100%;
@@ -256,8 +336,8 @@ footer{
     font-family: robotoMedium;
     position: absolute;
     left: 0;
-    top:120px;
-    display: block;
+    top:40%;
+    /*display: block;*/
     width: 100%;
 }
 
@@ -267,7 +347,6 @@ footer{
     color: #fff;
     text-align: center;
     width: 180px;
-    height: 45px;
     line-height: 45px;
     background-color: #000;
     border:3px solid #fff;
@@ -285,33 +364,79 @@ footer{
 }
 
 .index-center{
-    width: 75%;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    width: 90%;
     height:auto;
-    margin: 75px auto 70px auto;
-    overflow: hidden;
+    margin: 15px auto auto auto;
+    overflow: auto;
 }
 .index-center div{
-    width: 20%;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
     height: auto;
     float: left;
     text-align: center;
-    margin-right: 19%;
 }
-.index-center div:nth-child(3n+0){
-    margin-right: 0;
-    float: right;
+#app-layout header{
+      flex: 0 0 auto;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 80px;
+      display:flex;
+      /*background-color: #000;*/
+      /*position: static;*/
+}
+
+@media only screen and (max-width: 684px){
+  .index-center img{
+      width: 50px !important;
+      height: 50px !important;
+  }
+  .index-center div h4{
+      font-size:15px !important;
+  }
+  .index-center div p{
+    margin-top: 0px !important;
+      font-size: 15px !important;
+  }
+  .index-header h1{
+      top: 30% !important;
+      font-size: 30px;
+  }
+  .header-right p, .insidePageHeaderRight p {
+      display: none !important;
+  }
+
+  .header-right span .header-login{
+    margin-left: -20px;
+    font-size: 16px;
+  }
+  .header-right span .header-register{
+    margin-right: -23px;
+    font-size: 16px;
+  }
+  .insidePageHeaderRight{
+    left: 20% !important;
+  }
+  .header-left img{
+    margin-left: 7px !important;
+  }
+
 }
 .index-center div h4{
-    font-size:30px;
+    font-size:25px;
     color: #000;
     text-align: center;
     font-weight:normal;
     font-family: robotoMedium;
-
 }
 
 .index-center div p{
-    font-size: 30px;
+    font-size: 20px;
     color: #000;
     margin-top: 15px;
     text-align: center;
@@ -319,7 +444,8 @@ footer{
 }
 
 .index-center img{
-    width: auto;
+    align-self: center;
+    width: 110px;
     height: 110px;
     display: inline-block;
 }
@@ -457,7 +583,6 @@ footer{
     position: absolute;
     left: 0;
     bottom: -25px;
-    font-family:robotoLight ;
 }
 
 .register-center div i{
@@ -476,7 +601,7 @@ footer{
     margin:12px 15px 13px 14px;
 }
 .register-center div input{
-    width: 298px;
+    width: 311px;
     height: 37px;
     border:none;
     outline: none;
@@ -496,16 +621,14 @@ footer{
 .register-first{
     display: inline-block;
     width: 167px;
-    margin: 0!important;
 }
 .register-last{
     display: inline-block;
     width: 167px;
     float: right;
-    margin: 0!important;
 }
 .register-last input{
-    width: 165px!important;
+    width: 110px !important;
     padding-left: 15px;
 }
 .register-first input{
@@ -594,7 +717,22 @@ footer{
     margin: 0 auto;
     text-align: center;
 }
-
+#modifyPassword{
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #7385f6;
+    color: #fff;
+    font-size: 16px;
+    float: left;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    outline: none;
+    border:none;
+    cursor: pointer;
+}
 
 .home-header{
     width: 100%;
@@ -602,7 +740,7 @@ footer{
     height: 80px;
 }
 
-#login,#modifyPassword{
+#login{
     display: block;
     width: 120px;
     height: 30px;
@@ -619,37 +757,18 @@ footer{
     margin:0 auto 50px auto;
     cursor: pointer;
 }
-#modifyPassword{
-    width: 150px;
-}
-.forgetPrompt{
-    width: 100%;
-    height: auto;
-    text-align: center;
-    color: #f7261b;
-    margin-top: 20px;
-    font-family:robotoLight ;
-    display: none;
-    position: absolute;
-    left:0;
-    bottom: -30px;
-}
 #retrieve{
     display: inline-block;
     font-size: 14px;
     color: #2f9dd8;
     font-family: robotoMedium;
-    cursor: pointer;
-}
-.forgetCenter{
-    margin: 100px auto 45px auto;
 }
 
 .modify-foot{
     width: 150px!important;
-    margin-top: 55px;
+    margin-top: 130px;
 }
-#setting,.promptProgress{
+#setting{
     width: 100%;
     height: 100%;
     position: fixed;
@@ -658,81 +777,21 @@ footer{
     z-index: 999;
     display: none;
 }
-.promptText{
-    width: 580px;
-    height: 410px;
-    background-color: #fff;
-    position: absolute;
-    left: 0;
-    top:0;
-    border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-
-}
-.promptSetting {
-    position: absolute;
-    z-index: 10;
-    top:95px;
-    left: 255px;
-    width: 70px;
-    height: 70px;
-
-}
-.promptText h2{
-    font-size: 18px;
-    font-family: robotoLight;
-    color: #000;
-    text-align: center;
-}
-.promptText p{
-    font-size: 14px;
-    font-family: robotoThin;
-    color: #000;
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 70px;
-}
-.loader {
-    display: block;
-    margin: 55px auto;
-    -webkit-animation: load8 1.5s infinite linear;
-    animation: load8 1.5s infinite linear;
-}
-
-@-webkit-keyframes load8 {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-@keyframes load8 {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
 
 /*----------展示页面---------------*/
 
 .home-text{
+    display:flex;
+    flex-direction:column;
     background-color: #dadada;
     width: 100%;
     height: auto;
-    position: absolute;
+    flex:1 0 auto;
+    /*position: absolute;
     left: 0;
     top:80px;
     bottom: 50px;
-    right: 0;
+    right: 0;*/
     padding: 0 25px;
 }
 .home-text-left{
@@ -742,10 +801,12 @@ footer{
     position: absolute;
 }
 .home-text-right{
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    flex:1 0 auto;
     width: 100%;
     height:auto;
-    float: right;
+    /*float: right;*/
 }
 .home-text h1{
     text-align: center;
@@ -758,8 +819,9 @@ footer{
 }
 .recent-event-upload{
     display: inline-block;
-    width: 14%;
-    float: left;
+    /*width: 14%;*/
+    margin-right: 8px;
+    /*float: left;*/
 }
 .recent-event-upload p{
     font-family: robotoLight;
@@ -767,16 +829,16 @@ footer{
     font-size: 18px;
 }
 .recent-event-upload img{
-    display: block;
-    height: 50%;
-    margin: 9% 0 0 12%;
+    /*display: block;*/
+    /*height: 50%;*/
+    /*margin: 9% 0 0 12%;*/
 }
 .recent-event,.all-event{
     width: 100%;
-    height: auto;
+    /*height: auto;*/
     overflow: hidden;
     background-color: #fff;
-    padding: 26px 45px;
+    padding: 26px 10px 26px 45px ;
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -784,7 +846,9 @@ footer{
     box-shadow: 0 3px 6px #d0d0d0;
 }
 .recent-event{
-    height: 220px;
+    /*height: 120px;*/
+    display:flex;
+    flex:0 2 200px;
 }
 .recent-event-upload span{
     display: inline-block;
@@ -798,25 +862,38 @@ footer{
     color: #fff;
 }
 .recent-event ul{
-    display: inline-block;
-    width: 86%;
-    height: auto;
-    float: right;
-    overflow: hidden;
+    /*display: inline-block;*/
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    display: flex;
+    /*justify-content: space-between;*/
+    /*width: 86%;*/
+    /*height: auto;*/
+    /*float: right;*/
+    overflow: auto;
 }
 .all-event ul{
     display: inline-block;
-    width: 100%;
+    /*flex: 1 1 auto;*/
+    flex-wrap: wrap;
+    display: flex;
+    /*justify-content: space-between;*/
     height: auto;
-    overflow: hidden;
-    margin-top: 20px;
+    overflow: auto;
+    /*margin-top: 20px;*/
 
 }
 .recent-event ul li{
-    width: 14%;
-    height: auto;
-    float: left;
-    margin-right: 3%;
+    /*min-width: 150px;*/
+
+    width: 130px;
+    margin-right: 2%;
+    height: 130px;
+    /*float: left;*/
+    /*display:inline-block;*/
+    /*margin-right: 3%;*/
+    /*flex:1 1 auto;*/
+    padding-bottom: 5px;
     background-color: #ececec;
     position: relative;
     cursor: pointer;
@@ -824,26 +901,36 @@ footer{
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     overflow: hidden;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     min-width: 127px;
     min-height: 137px;
 }
-.recent-event ul li:nth-child(6n+0){
+/*.recent-event ul li:last-child{
+    margin-bottom: 0px;
+}*/
+/*.recent-event ul li:nth-child(6n+0){
     margin-right: 0;
     float: right;
-}
+}*/
 .recent-event ul li img ,.all-event ul li img{
     display: block;
     width: 100%;
     height: 120px;
 }
+.recent-event ul li > img ,.all-event ul li > img{
+    display: block;
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+}
+
 .recent-event ul li p,.all-event ul li p{
     font-size: 14px;
     color: #000;
-    height: 33px;
+    height: 20px;
     font-family: robotoMedium;
     text-align: center;
-    padding: 7px 5px;
+    padding: 4px 2.5px;
     overflow: hidden;
     white-space:nowrap;
     text-overflow:ellipsis;
@@ -868,10 +955,10 @@ footer{
     z-index: 50;
 }
 .all-event ul li{
-    width:14%;
-    height: auto;
-    float: left;
-    margin-right: 3%;
+    width: 130px;
+    display:inline-block;
+    height: 130px;
+    margin-right: 2%;
     background-color: #ececec;
     position: relative;
     cursor: pointer;
@@ -910,14 +997,18 @@ footer{
     float: right;
 }
 .all-event{
-    width: auto;!important;
+    /*width: auto;!important;*/
     margin-top: 30px;
-    position: absolute;
-    left: 25px;
-    right: 25px;
-    top:292px;
-    bottom:30px;
-    overflow: auto;
+    flex:1 1 250px;
+    flex-direction: column;
+    display: flex;
+    margin-bottom: 10px;
+    /*position: absolute;*/
+    /*left: 25px;*/
+    /*right: 25px;*/
+    /*top:292px;*/
+    /*bottom:30px;*/
+    /*overflow: auto;*/
 }
 .all-event p{
     font-family: robotoLight;
@@ -926,19 +1017,30 @@ footer{
 }
 /*------------上传页面--------------------*/
 .news-text{
-    width: 100%;
-    position: fixed;
-    left: 0;
-    top:80px;
-    right: 0;
-    bottom: 50px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     background-color: #ededed;
     padding: 0 25px;
+    overflow-y: scroll;
+}
+/*Review require more precise*/
+form:nth-child(3){
+    overflow: scroll;
+    flex: 1 1 auto;
+    display:flex;
+}
 
+.news-text .news-center-left-head{
+    display: flex;
+    align-items: center;
+    /*flex: 1 1 auto;*/
 }
 .selectAllHeader{
     overflow: hidden;
+    position: relative;
 }
+
 .timeOut{
     position: absolute;
     width: 100%;
@@ -955,7 +1057,6 @@ footer{
     margin: 20px auto;
 }
 .news-center-left-head h3{
-    width: 300px;
     height: 100%;
     line-height: 40px;
     font-size: 18px;
@@ -967,6 +1068,16 @@ footer{
     font-size: 18px;
     color: #afb1b4;
 }
+.news-center-left-head{
+  width: 100%;
+}
+.news-center{
+  display : flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
 .upload-title{
     text-align: center;
     width: 100%;
@@ -977,34 +1088,37 @@ footer{
     line-height: 60px;
 }
 .data-title{
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
     font-size: 18px;
     font-family: robotoLight;
     color: #000;
     height: 60px;
     line-height: 60px;
-    width: 350px;
-    margin: 0 auto;
-    text-align: center;
+    /*width: 350px;*/
+    /*margin: 0 auto;*/
+    /*text-align: center;*/
 }
 
-.data-title span{
+/*.data-title span{
     display: inline-block;
 
-}
+}*/
 .data-title i{
     margin: 10px 10px;
     font-size: 18px;
     color: #afb1b3;
     cursor: pointer;
 }
-.news-center{
-    display: block;
-    padding: 0 26px;
-    overflow: hidden;
-}
+
+
 .details-center-right{
     width: 100%;
     height: auto;
+    display:flex;
+    flex-wrap: wrap;
+    flex: 0 0 auto;
     background-color: #fff;
     border-radius:15px;
     -moz-border-radius: 15px;
@@ -1014,9 +1128,10 @@ footer{
 }
 
 .detailsTitle{
-    width: 100%;
+    /*width: 100%;*/
+    flex: 0 0 100%;
     height: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .detailsTitle h1{
@@ -1028,26 +1143,26 @@ footer{
     margin-top: 5px;
 }
 .details-age{
-    width: 44%;
+    width: calc(50% - 87.5px);
     height: 225px;
     background-color: #fff;
-    margin-right: 5%;
-    float: left;
-    margin-left: 50px;
+    /*margin-right: 5%;*/
+    /*float: left;*/
+    /*margin-left: 50px;*/
 
 }
 .race{
-    width: 30%;
+    width: calc(50% - 87.5px);
     height: 225px;
     background-color: #fff;
-    float: right;
-    margin-right:0;
+    /*float: right;*/
+    /*margin-right:0;*/
 }
 .gender{
-    float: left;
+    /*float: left;*/
     width: 175px;
     height: 225px;
-    margin-right:5% ;
+    /*margin-right:5% ;*/
 }
 #race{
     width: 100%;
@@ -1070,13 +1185,14 @@ footer{
     font-size: 14px;
     color: #afb1b3;
     font-family:robotoMedium;
-    float: left;
-    position: absolute;
-    left: 60px;
-    top:18px;
+    /*float: left;*/
+    /*position: absolute;*/
+    /*left: 60px;*/
+    /*top:18px;*/
 }
 .data-back{
-    top:20px;
+    /*top:20px;*/
+    flex: 1 1 auto;
 }
 .news-back a{
     color: #afb1b3;
@@ -1087,34 +1203,68 @@ footer{
     float: left;
 }
 .NewTitleLeft{
-    width: 70%;
+    width: 65%;
+    display: flex;
     background-color: #fff;
     height: 210px;
     border-radius:12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
-    float: left;
-    padding: 29px 30px;
+    padding: 30px 0px 30px 30px;
     box-shadow: 0 2px 6px #d7d7d7;
 }
 .NewTitleContent{
-    float: left;
     width: 80%;
     height: 100%;
+    margin-right: 20px;
+}
+
+@media only screen and (max-width: 950px){
+  .news-body{
+    flex-flow: column;
+  }
+  .NewTitleLeft{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .NewTitleRight{
+    width: 100% !important;
+  }
+  .news-back{
+    left: 30px;
+  }
+  @media only screen and (max-width: 480px){
+    .NewTitleContent input{
+      border: none !important;
+      padding-left: 0px !important;
+
+    }
+    .NewTitleContent textarea{
+      border: none !important;
+      padding-left: 0px !important;
+    }
+    .NewTitleLeft img{
+      width: 90% !important;
+      height: 70% !important;
+    }
+    .uploadify{
+        width: 100px !important;
+        height: 100px !important;
+        margin-top:-106px !important;
+    }
+
+  }
+
 }
 .NewTitleContentRight {
-    display: inline-block;
-    width: 156px;
     height: 100%;
-    text-align: center;
-    position: relative;
-    float: right;
-    overflow: hidden;
 }
 .NewTitleLeft img{
+    position: relative;
     height: 100%;
     width: auto;
 }
+
 .NewTitleContent input{
     width: 100%;
     height: 38px;
@@ -1148,21 +1298,21 @@ footer{
     padding: 0 15px;
 }
 .NewTitleRight{
-    width: 412px;
+    width: 33%;
+    display: flex;
     background-color: #fff;
     height: 210px;
     border-radius:12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
-    float: right;
-    padding: 29px 30px 29px 60px;
+    padding: 29px 0px 29px 20px;
     box-shadow: 0 2px 6px #d7d7d7;
 }
 
 .selectMetrices{
-    width: 120px;
+    flex: 1;
+    width: 50%;
     height: 100%;
-    float: left;
 }
 .selectMetrices p,.orderSummary{
     font-size: 14px;
@@ -1189,8 +1339,6 @@ footer{
     font-size: 14px;
 }
 .orderSummary{
-    width: 185px;
-    float: right;
     position: relative;
 }
 .orderSummary div input,.orderSummary div span{
@@ -1202,6 +1350,7 @@ footer{
     width: 50px;
     border:none;
     outline: none;
+    margin-left: 5px;
 }
 .orderSummary div span{
     width: auto;!important;
@@ -1211,18 +1360,15 @@ footer{
 }
 
 .selectAll{
-    position: absolute;
-    left: 26px;
-    top:290px;
-    right: 26px;
-    bottom: 20px;
     background-color: #fff;
     box-shadow:0 2px 6px #d7d7d7;
     border-radius:12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
-    overflow: auto;
-    padding: 30px;
+    padding: 20px;
+    flex: 1 1 auto;
+    display:flex;
+    flex-direction: column;
 }
 
 .delete{
@@ -1272,26 +1418,30 @@ footer{
 .selectAll ul{
     margin-top: 30px;
     width: 100%;
-    height: auto;
-    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    height: 40vh;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-y:auto;
+
 }
 .selectAll ul li,.details-center-left-text ul li{
     position: relative;
-    width: 10.4%;
-    height: 110px;
-    float: left;
-    margin-right: 2.4%;
-    margin-bottom: 40px;
+    width: 130px;
+    height: 130px;
+    /*float: left;*/
     border-radius:5px;
-    overflow: hidden;
+    margin-right: 10px;
+    /*margin-bottom: 20px;*/
 }
-.selectAll ul li:nth-child(8n+0),.details-center-left-text ul li:nth-child(8n+0){
-    margin-right: 0;
-    float: right;
-}
+
+
 .selectAll ul li img{
     width: 100%;
-    height:90px;
+    height:100%;
+    object-fit: cover;
 
 }
 .selectAll ul li input{
@@ -1312,18 +1462,21 @@ footer{
     margin-top: 2px;
 }
 .details-center-left-text{
-    overflow: auto;
+    overflow: hidden;
     margin-top: 20px;
     padding: 20px 40px 0 40px;
     background-color: #fff;
     border-radius: 15px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    /*position: absolute;
     left: 25px;
     right: 25px;
     top:380px;
-    bottom:30px;
+    bottom:30px;*/
 }
 .detailsEvents{
     width: 100%;
@@ -1360,11 +1513,22 @@ footer{
 .details-center-left-text ul{
     width: 100%;
     height: auto;
-    overflow: hidden;
+    /*max-height: 60vh;*/
+    flex: 1 1 auto;
+    overflow: auto;
+    /*justify-content: space-between;*/
+    display: flex;
+    flex-wrap: wrap;
 }
+
+/*.details-center-left-text ul:after{
+    content: "";
+    flex: auto;
+}*/
 
 .details-center-left-text ul li img{
     width: 100%;
+    object-fit: cover;
     display: block;
     height: 90px;
     cursor: pointer;
@@ -1389,8 +1553,8 @@ footer{
     color: #afb1b3;
     padding: 0 10px;
     display: inline-block;
-    float: left;
-    width: 90%;
+    /*float: left;*/
+    /*width: 90%;*/
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
@@ -1403,7 +1567,7 @@ footer{
 }
 .news-img-delete{
     width: 100%;
-    height: 90px;
+    height: 100%;
     position: absolute;
     top:0;
     left: 0;
@@ -1443,7 +1607,10 @@ footer{
     text-align: center;
 
 }
-#file-queue{margin: 0!important;}
+#file-queue{
+  display: none;
+  margin: 0!important;
+}
 .news-center-upload span{
     display: block;
     width: auto;
@@ -1452,14 +1619,12 @@ footer{
     color: #b0b0b2!important;
 }
 #file{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top:0;
-    left:0;
+    width: 140px;
+    height: 130px;
+    position: sticky;
+    margin-top:-146px;
     z-index: 10;
     opacity: 0;
-
 }
 
 .checkbox{
@@ -1588,6 +1753,16 @@ footer{
     float: left;
 }
 
+.character-data{
+  /*display: flex !important;*/
+  width: 100vw;
+  height: 100vh;
+  /*align-items: center;
+  align-content: center;*/
+  flex: 1 0 auto;
+  justify-content: space-around;
+}
+
 .view-picture,.details-picture,.character-data{
     position: fixed;
     top:0;
@@ -1608,7 +1783,7 @@ footer{
     background-color: #000;
     z-index: 10;
 }
-.view-Close,.character-Close,.forget-return{
+.view-Close,.character-Close{
     position: absolute;
     right: 50px;
     top:15px;
@@ -1617,8 +1792,8 @@ footer{
 }
 .details-Close{
     position: absolute;
-    right: 60px;
-    top:35px;
+    right: 10px;
+    top:10px;
     z-index: 20;
     cursor: pointer;
 }
@@ -1680,55 +1855,42 @@ footer{
     left: 0;
     bottom: 0;
 }
+
 #buttons{
     display: block;
     width: 100px;
     height: 30px;
     text-align: center;
     line-height: 30px;
+    background-color: #7fbb42;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     color: #fff;
     font-size: 14px;
     font-family: robotoMedium;
-    background-color: #7fbb42;
-    outline: none;
-    cursor: pointer;
-    float: right;
     border:none;
-    margin-left: 20px;
-}
-#downloadType{
-    display: block;
-    width: 205px;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    color: #000;
-    font-size: 14px;
-    font-family: robotoMedium;
-    border:2px solid #7fbb42;
     outline: none;
     cursor: pointer;
     float: right;
+}
 
-}
-.details-text,.character-text{
-    width: 60%;
-    height: 355px;
-    background-color: #fff;
-    position: fixed;
-    left: 0;
-    top:0;
-    z-index: 20;
-    padding: 35px 50px;
-}
 .details-text{
-
+  height: 300px;
+  background-color: #fff;
+  position:relative;
+  z-index: 20;
+  padding: 15px 0px;
+  max-width: 728px;
+  margin-top: -150px;
+  margin-left: -364px;
+  top: 50%;
+  left: 50%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  border-radius: 3px;
 }
 .details-text-title{
     width: 100%;
@@ -1737,6 +1899,7 @@ footer{
     margin-bottom: 20px;
 }
 .details-text-title p{
+    margin-right: 20px;
     display: inline-block;
     font-size: 18px;
     color: #000;
@@ -1748,29 +1911,53 @@ footer{
     font-family: robotoMedium;
 }
 #selectedAge{
-    display: inline-block;
-    width: 30%;
-    height: 95%;
-    float: left;
+    flex: 1 1 30%;
+    width: 292px;
+    height: 90%;
+    align-self: flex-start;
+
 }
 #selectedGender{
-    width: 20%;
-    height: 95%;
-    float: left;
-    margin: 0 10%;
+    flex: 1 1 20%;
+    width: 143px;
+    height: 90%;
 }
-
 #selectedRace{
-    width: 30%;
-    height: 95%;
-    float: right;
+    flex: 1 1 30%;
+    width: 280px;
+    height: 90%;
+}
+@media only screen and (max-width: 728px) {
+  .details-text{
+    overflow: scroll !important;
+    height: auto;
+    width: 100%;
+    top: 0% !important;
+    left: 0 !important;
+    margin-top: 80px !important;
+    margin-left: 0px !important;
+    border-radius: none !important;
+  }
+  #selectedAge, #selectedGender, #selectedRace{
+      flex: 1 1 70%;
+      height: 33%;
+      margin: 0 10% 0 5%;
+  }
 }
 .character-text{
-    width: 47%;
-    padding: 0 50px;
-    height: 505px;
-    min-width: 700px;
-
+    background-color: #fff;
+    position:relative;
+    z-index: 20;
+    padding: 35px 50px;
+    max-width: 980px;
+    flex: 1 1 auto;
+    margin: 100px 0 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    align-items: center;
+    overflow: auto;
+    border-radius: 3px;
 }
 .character-text h3{
     width: 100%;
@@ -1783,9 +1970,12 @@ footer{
     margin-bottom: 10px;
 }
 .character-text-left{
-    width: 47%;
+    width: 440px;
+    min-width: 320px;
+    flex: 1 0 50%;
     height: 100%;
-    float: left;
+    /* float: left; */
+    align-self: flex-start;
 }
 .character-text-left h6{
     font-size: 14px;
@@ -1795,7 +1985,7 @@ footer{
 }
 #personalData{
     width: 100%;
-    height: 255px;
+    /*height: 255px;*/
     position: relative;
     margin-top: 30px;
     border-radius: 15px;
@@ -1805,7 +1995,7 @@ footer{
 }
 .character-text-left img{
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     display: block;
 }
 .character-text-left p{
@@ -1825,9 +2015,10 @@ footer{
     padding: 10px 10px;
 }
 .character-text-right{
-    width: 50%;
-    height: 100%;
-    float: right;
+    flex: 1 0 50%;
+    min-width: 320px;
+    /* height: 100%; */
+    /* float: right; */
 }
 
 .character-text-right h6{
@@ -1927,10 +2118,10 @@ footer{
     text-align: center;
 }
 .allDataStatistics{
-    display: inline-block;
-    width:300px;
+    /*display: inline-block;*/
+    width:200px;
     height: 100%;
-    float: left;
+    /*float: left;*/
 }
 .allDataStatistics div{
     width: 100%;
@@ -1956,6 +2147,10 @@ footer{
 }
 .dataExhibition{
     overflow: hidden;
+    width: calc(100% - 200px);
+    flex:1 1 auto;
+    display:flex;
+    flex-wrap: wrap;
 }
 .clickHide{
     display: inline-block;
@@ -1989,8 +2184,10 @@ footer{
     -moz-border-radius: 12px;
     height: 450px;
     position: absolute;
-    left:0;
-    top:0;
+    left:50%;
+    top:50%;
+    margin-left: -215px;
+    margin-top: -225px;
     z-index: 99;
 }
 .activityText i{
@@ -2028,5 +2225,3 @@ footer{
     line-height: 22px;
     overflow: auto;
 }
-
-

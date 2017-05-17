@@ -64,25 +64,29 @@ $(function () {
     });
 
     $(".clickHide").on("click",function () {
-        var text=$(this).find("i").text();
-        if(text=="keyboard_arrow_up"){
-            $(".details-center-right").animate({
-                height:70
-            },1000);
-            $(this).find("i").text("keyboard_arrow_down");
-            $(".details-center-left-text").animate({
-                top:140
-            },1000)
-        } else {
-            $(".details-center-right").animate({
-                height:305
-            },1000);
-            $(this).find("i").text("keyboard_arrow_up");
-            $(".details-center-left-text").animate({
-                top:380
-            },1000)
-        }
-    });
+       var text=$(this).find("i").text();
+       if(text=="keyboard_arrow_up"){
+           $(".details-center-right").animate({
+               height:63
+           },1000);
+           $(this).find("i").text("keyboard_arrow_down");
+           // $(".details-center-left-text").animate({
+           //     top:140
+           // },1000)
+       } else {
+           $(".dataExhibition").height();
+           $(".details-center-right").animate({
+               height:$(".dataExhibition").height()+55
+           },1000);
+           setTimeout(function(){
+               $(".details-center-right").css('height','auto')
+           },1001)
+           $(this).find("i").text("keyboard_arrow_up");
+           // $(".details-center-left-text").animate({
+           //     top:380
+           // },1000)
+       }
+   });
 
 
 
@@ -138,10 +142,14 @@ $(function () {
     });
 
     $(".data-title").find("i").on("click",function () {
-        $(".activityInformation").fadeIn();
-        var aH = ($(window).height() - $(".activityText").height()) / 2;
-        var aW = ($(window).width() - $(".activityText").width()) / 2;
-        $(".activityText").css({left:aW, top:aH});
+      $(".activityInformation").css({display: 'flex', opacity:0});
+        $(".activityInformation").animate({
+          opacity:1,
+        }, 500);
+        // $(".activityInformation").fadeIn();
+        // var aH = ($(window).height() - $(".activityText").height()) / 2;
+        // var aW = ($(window).width() - $(".activityText").width()) / 2;
+        // $(".activityText").css({left:aW, top:aH});
     });
 
     $(".activityText").find("i").on("click",function () {
